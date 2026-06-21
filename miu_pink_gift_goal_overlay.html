@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Miu Pink Gift Goal Overlay</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    overflow: hidden;
+    font-family: "Arial", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  }
+
+  .wrap {
+    width: 150px;
+    padding: 10px 6px;
+    background: rgba(255, 230, 245, 0.38);
+    border-radius: 22px;
+    backdrop-filter: blur(4px);
+  }
+
+  .goal {
+    position: relative;
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 14px auto;
+  }
+
+  .goal:last-child {
+    margin-bottom: 0;
+  }
+
+  .ring {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background:
+      conic-gradient(#ff4fb8 calc(var(--percent) * 1%), rgba(255,255,255,0.35) 0);
+    display: grid;
+    place-items: center;
+    filter: drop-shadow(0 0 5px rgba(255, 79, 184, .65));
+  }
+
+  .ring::before {
+    content: "";
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(255, 235, 247, 0.82);
+    position: absolute;
+  }
+
+  .gift {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    z-index: 2;
+  }
+
+  .num {
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    transform: translateX(-50%);
+    z-index: 3;
+    font-size: 18px;
+    font-weight: 900;
+    color: #8b1f61;
+    text-shadow:
+      -1px -1px 0 #fff,
+       1px -1px 0 #fff,
+      -1px  1px 0 #fff,
+       1px  1px 0 #fff,
+       0 0 6px rgba(255,255,255,.9);
+    white-space: nowrap;
+  }
+
+  .label {
+    position: absolute;
+    left: 50%;
+    top: 102px;
+    transform: translateX(-50%);
+    font-size: 11px;
+    font-weight: 800;
+    color: #ff4fb8;
+    text-shadow: 0 0 4px #fff;
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- 1個目：画像URL・数字・目標をここで変える -->
+    <div class="goal" style="--percent: 60;">
+      <div class="ring">
+        <img class="gift" src="https://em-content.zobj.net/source/apple/391/sunflower_1f33b.png">
+      </div>
+      <div class="num">00/100</div>
+    </div>
+
+    <!-- 2個目 -->
+    <div class="goal" style="--percent: 40;">
+      <div class="ring">
+        <img class="gift" src="https://em-content.zobj.net/source/apple/391/gift_1f381.png">
+      </div>
+      <div class="num">00/100</div>
+    </div>
+
+    <!-- 3個目 -->
+    <div class="goal" style="--percent: 80;">
+      <div class="ring">
+        <img class="gift" src="https://em-content.zobj.net/source/apple/391/rose_1f339.png">
+      </div>
+      <div class="num">00/50</div>
+    </div>
+
+    <!-- 4個目 -->
+    <div class="goal" style="--percent: 20;">
+      <div class="ring">
+        <img class="gift" src="https://em-content.zobj.net/source/apple/391/racing-car_1f3ce-fe0f.png">
+      </div>
+      <div class="num">00/10</div>
+    </div>
+
+  </div>
+</body>
+</html>
